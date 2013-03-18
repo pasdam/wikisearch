@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+	android:key="@string/PREFS" android:title="@string/preferences"
+	android:persistent="true">
+	<CheckBoxPreference android:title="@string/suggests"
+		android:key="@string/PREFS_SUGGESTS_ENABLED" android:defaultValue="true"></CheckBoxPreference>
+	<ListPreference android:entryValues="@array/PREFS_NUMBER_OF_SUGGESTS"
+		android:entries="@array/PREFS_NUMBER_OF_SUGGESTS" android:dialogTitle="@string/numberOfSuggests"
+		android:key="@string/PREFS_SUGGESTS_NUMBER" android:title="@string/numberOfSuggests"
+		android:dependency="@string/PREFS_SUGGESTS_ENABLED"></ListPreference>
+	<ListPreference android:entryValues="@array/PREFS_NUMBER_OF_RESULTS"
+		android:entries="@array/PREFS_NUMBER_OF_RESULTS" android:key="@string/PREFS_RESULTS_NUMBER"
+		android:defaultValue="@string/PREFS_NUMBER_OF_RESULTS_DEFAULT"
+		android:title="@string/numberOfResults" android:dialogTitle="@string/numberOfResults">
+	</ListPreference>
+	<CheckBoxPreference android:defaultValue="false" android:title="@string/automaticallyLoadMoreResults" android:key="@string/PREFS_RESULTS_LOAD_MORE"></CheckBoxPreference>
+</PreferenceScreen>

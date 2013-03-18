@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+	android:layout_width="fill_parent" android:orientation="vertical"
+	android:layout_height="fill_parent"
+	android:id="@+id/search_mainLyt">
+	
+	<LinearLayout android:layout_height="wrap_content"
+		android:layout_width="fill_parent">
+		<LinearLayout android:layout_height="fill_parent"
+			android:layout_width="fill_parent" android:layout_weight="1"
+			android:gravity="center_vertical" android:background="@drawable/searchbox_border">
+			<AutoCompleteTextView android:textColor="@android:color/black"
+				android:layout_height="wrap_content" android:layout_width="fill_parent"
+				android:id="@+id/search_searchboxTxt" android:layout_weight="1"
+				android:background="@android:color/transparent"
+				android:completionThreshold="1"></AutoCompleteTextView>
+			<ImageButton android:src="@android:drawable/ic_menu_search"
+				android:background="@android:color/transparent"
+				android:layout_width="35dip" android:id="@+id/search_searchBtn"
+				android:layout_height="fill_parent" android:scaleType="fitXY"></ImageButton>
+		</LinearLayout>
+		<Button android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:background="@android:drawable/ic_menu_more"
+			android:id="@+id/search_moreBtn"></Button>
+	</LinearLayout>
+	
+	<ListView android:layout_height="fill_parent"
+		android:layout_width="fill_parent" android:id="@+id/search_resultLst"></ListView>
+</LinearLayout>

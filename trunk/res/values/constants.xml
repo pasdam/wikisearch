@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="APP_NAME">WikiSearch</string>
+	<string-array name="SERVICE_NAMES">
+		<item>Wikipedia</item>
+		<item>Wiktionary</item>
+		<item>Wikiquote</item>
+		<item>Wikinews</item>
+		<item>Wikibooks</item>
+	</string-array>
+	<string name="PREFS">com.pd.WikiSearch</string>
+	<string name="PREFS_SUGGESTS_NUMBER">com.pd.WikiSearch.suggests.number</string>
+	<string name="PREFS_SUGGESTS_ENABLED">com.pd.WikiSearch.suggests.enabled</string>
+	<string name="PREFS_RESULTS_LOAD_MORE">com.pd.WikiSearch.results.loadMore</string>
+	<string name="PREFS_RESULTS_NUMBER">com.pd.WikiSearch.results.number</string>
+	<string name="PREFS_LAST_SERVICE">com.pd.WikiSearch.last.service</string>
+	<string name="PREFS_LAST_LANG">com.pd.WikiSearch.last.lang</string>
+	<string name="PREFS_LAST_WIKI">com.pd.WikiSearch.last.wiki</string>
+	<string-array name="PREFS_NUMBER_OF_RESULTS">
+		<item>10</item>
+		<item>20</item>
+		<item>30</item>
+		<item>50</item>
+		<item>100</item>
+	</string-array>
+	<string name="PREFS_NUMBER_OF_RESULTS_DEFAULT">5</string>
+	<string name="PREFS_NUMBER_OF_SUGGESTS_DEFAULT">5</string>
+	<string-array name="PREFS_NUMBER_OF_SUGGESTS">
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+		<item>5</item>
+		<item>10</item>
+	</string-array>
+</resources>
