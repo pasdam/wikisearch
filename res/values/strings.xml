@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="search">Search</string>
+	<string name="preferences">Preferences</string>
+	<string name="numberOfSuggests">Number of suggests</string>
+	<string name="suggests">Suggests</string>
+	<string name="numberOfResults">Number of results</string>
+	<string name="automaticallyLoadMoreResults">Automatically load more results</string>
+	<string name="openInBrowser">Open in Browser</string>
+	<string name="chooseService">Choose service</string>
+	<string name="showImages">Show images</string>
+	<string name="chooseLang">Choose language</string>
+	<string name="unableToLoadMoreResults">Unable to load more results</string>
+	<string name="unableToLoadPage">Unable to load the page</string>
+	<string name="customLangDescription">Insert the wiki (example: for english version, en.wikipedia.org, insert "en")</string>
+	<string name="ok">OK</string>
+	<string name="connectionError">Connection error</string>
+	<string name="notValidService">Service not valid</string>
+</resources>

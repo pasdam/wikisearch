@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="com.pd.wikiSearch" android:versionCode="1"
+	android:versionName="1.0">
+	<uses-permission android:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+	<uses-sdk android:minSdkVersion="3"/>
+
+	<application android:label="@string/APP_NAME" android:icon="@drawable/ic_launcher_wikisearch">
+		<activity android:theme="@android:style/Theme.Light"
+			android:name="com.pd.wikiSearch.SearchActivity" android:launchMode="singleTask">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.pd.wikiSearch.Preferences" android:launchMode="singleTask"></activity>
+		<activity android:name="com.pd.wikiSearch.ChooseServiceActivity"
+			android:theme="@android:style/Theme.Dialog" android:label="@string/chooseService" android:launchMode="singleTask"></activity>
+		<activity android:launchMode="singleTask" android:name="com.pd.wikiSearch.WebActivity"></activity>
+	</application>
+</manifest>
