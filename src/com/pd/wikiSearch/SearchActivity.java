@@ -2,11 +2,13 @@ package com.pd.wikiSearch;
 
 import java.io.IOException;
 import java.io.StringReader;
+import java.net.URLEncoder;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
@@ -138,17 +140,7 @@ public class SearchActivity extends Activity {
 			public void onClick(View v) {
 				try {
 					SearchActivity.resultsAdapter.clear();
-					SearchActivity.this.addResultToList(
-							EntityUtils.toString(
-									new DefaultHttpClient()
-										.execute(
-												new HttpGet("http://" + SearchActivity.this.language 
-														+ "." + SearchActivity.this.domain 
-														+ "/w/api.php?action=query&list=search&srprop=snippet&format=xml&srsearch="
-														+ SearchActivity.this.searchBoxTxt.getText().toString() 
-														+ "&srlimit=" + SearchActivity.this.numberOfResults
-														+ "sroffset" + SearchActivity.this.resultLst.getCount()))
-													.getEntity()));
+					performSearch();
 				} catch (Exception e) {
 //					e.printStackTrace();
 					Toast.makeText(SearchActivity.this, R.string.connectionError, Toast.LENGTH_LONG).show();
@@ -171,17 +163,7 @@ public class SearchActivity extends Activity {
 					int visibleItemCount, int totalItemCount) {
 				if(SearchActivity.this.loadMore && ((firstVisibleItem + visibleItemCount) == totalItemCount) && !(SearchActivity.this.searchBoxTxt.getText().toString().equals(""))){
 					try {
-						SearchActivity.this.addResultToList(
-							EntityUtils.toString(
-									new DefaultHttpClient()
-										.execute(
-												new HttpGet("http://" + SearchActivity.this.language 
-														+ "." + SearchActivity.this.domain 
-														+ "/w/api.php?action=query&list=search&srprop=snippet&format=xml&srsearch="
-														+ SearchActivity.this.searchBoxTxt.getText().toString() 
-														+ "&srlimit=" + SearchActivity.this.numberOfResults
-														+ "&sroffset=" + totalItemCount))
-													.getEntity()));
+						performSearch();
 					} catch (Exception e) {
 						Toast.makeText(SearchActivity.this, SearchActivity.this.getString(R.string.unableToLoadMoreResults), Toast.LENGTH_LONG).show();
 					}
@@ -292,5 +274,20 @@ public class SearchActivity extends Activity {
 		Intent intent = new Intent(this, WebActivity.class);
 		intent.putExtra(WebActivity.EXTRA_URL, "http://" + this.language + ".m." + this.domain + "/wiki/" + pageTitle.replaceAll(" ", "_"));
 		startActivity(intent);
+	}
+
+	private void performSearch() throws ParserConfigurationException,
+			SAXException, IOException, ClientProtocolException {
+		SearchActivity.this.addResultToList(
+				EntityUtils.toString(
+						new DefaultHttpClient()
+							.execute(
+									new HttpGet("http://" + SearchActivity.this.language 
+											+ "." + SearchActivity.this.domain 
+											+ "/w/api.php?action=query&list=search&srprop=snippet&format=xml&srsearch="
+											+ URLEncoder.encode(SearchActivity.this.searchBoxTxt.getText().toString(), "ISO-8859-1") 
+											+ "&srlimit=" + SearchActivity.this.numberOfResults
+											+ "&sroffset=" + SearchActivity.this.resultLst.getCount()))
+										.getEntity()));
 	}
 }
