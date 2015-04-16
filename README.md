@@ -19,3 +19,6 @@ WikiSearch allows users to perform searches on Wikimedia services, using MediaWi
 <img src="https://github.com/pasdam/wikisearch/blob/master/schreenshots/services.png" alt="Service selection"/>
 <img src="https://github.com/pasdam/wikisearch/blob/master/schreenshots/suggests.png" alt="Suggest"/>
 <img src="https://github.com/pasdam/wikisearch/blob/master/schreenshots/webview.png" alt="Item view"/>
+
+##IDE
+The repository contains all project files for Eclipse IDE.
